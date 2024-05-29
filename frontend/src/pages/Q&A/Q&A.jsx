@@ -132,16 +132,16 @@ function Ques(props) {
         setToastMessage("Q&A added successfully!");
         setOpenToast(true);
         setSeverity("success");
+        setFormData({
+          title: "",
+          description: "",
+          tags: [],
+        });
+        setCheckedState(new Array(Tags.length).fill(false));
       }
       setIsUploadingData(false);
 
-      setFormData({
-        title: "",
-        description: "",
-        tags: [],
-      });
       setFormErrors({});
-      setCheckedState(new Array(Tags.length).fill(false));
     } catch (err) {
       setIsUploadingData(false);
       setToastMessage("Something went wrong!");
